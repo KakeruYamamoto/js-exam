@@ -50,16 +50,16 @@ $(document).ready(function(){
                             Number($('#science').val()),
                             Number($('#society').val())
                           ];
-      let number = subject_points.length;
 
+      let number = subject_points.length;
+      let judge = "合格";
     for (let i = 0; i < number; i++) {
       if (subject_points[i] < 60){
-        $('#judge').text("不合格");
-      } else {
-        $('#judge').text("合格")
+        judge =  "不合格";
+        break
       }
-
-}
+    }
+      return jugde;
 };
 
   function judgement(){
@@ -84,11 +84,10 @@ $('#national_language, #english, #mathematics, #science, #society').change(funct
 
   $('#btn-judge').click(function() {
     let pass_or_failure = get_pass_or_failure();
-    $('judge').text(pass_or_failure);
+    $('#judge').text(pass_or_failure);
   });
 
   $('#btn-declaration').click(function() {
-
     $('declaration').text(judgement());
   });
 });
