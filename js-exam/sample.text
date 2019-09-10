@@ -1,0 +1,66 @@
+① $(document).ready(function(){ ~ });
+
+これはhtml=domの読み込みが終了後に、function(){〜});の
+{~}の中の条件式あるいは関数など、何らかの処理が実行されるというものである。
+
+つまり
+$(document).ready(function(){
+console.log("焼肉");
+ });
+ とすると、html=domの読み込みが終了後に
+ 文字列、『焼肉』が実行されるものである。
+
+② $('#btn-evaluation').click(function() { ~ });
+これは、HTML上のID値が　『btn-evaluation』である要素をクリックすると
+末尾側の{〜}の中の条件式が実行されるもである。
+つまり
+$('#btn-evaluation').click(function(){
+
+$(this).css('background-color','red');
+
+});
+とすると、
+id値（#btn-evaluation）をクリックすることで
+その指定されたid値(#btn-evaluation)のテキストの背景色が
+変わるというものである。＊cssの説明は割愛する。
+
+③ $('#national_language, #english, #mathematics, #science, #society').change(function() { ~ });
+これは指定されたid値(上記の五つ)の中身が変更された場合に末尾側にある、{~}内の処理が実行されるというものである。
+例えば、仮に上記の指定しているid値の要素が入力フォームだった場合、
+空欄状態から何らかの文字列あるいは数値に変更されると
+その{~}内の処理が実行されるというものである。
+
+④ $('#national_language').val()
+これは指定されたid値にval()内の値をvalue値として設定するものである。
+つまり
+val('a')とすれば、value値がそのid値にaと設定される。
+
+⑤ Number()
+これはjavascriptのオブジェクトのひとつで数値を取得したい場合に
+使われるものである。
+つまり
+Number($('#national_language').val())
+とすれば、
+その指定したid値の要素が仮に
+入力フォームだとすれば、その入力値が取得できる。
+
+
+⑥ $("#sum_indicate").text(sum);
+これは指定されたid値にtext()内の文字列が
+そのid値に反映されるものである。
+問題ではtext()内にsumが入力されているが
+それは、おそらく変数、あるいは定数で定義されたものであるので
+その定義された文字列が反映される。
+
+⑦ .append
+これは何かしらの要素を指定して、その指定された要素の内のコンテンツの後ろに
+指定したコンテンツを加えることができるというものである。
+例えば、（'.inner').append('<p>テスト</p>');
+
+<div class="inner">
+合格するぞ
+</div>
+
+とすると
+その指定されたclass内にあるコンテンツの
+後ろに<p>テスト</p>が追加されるというものである。
