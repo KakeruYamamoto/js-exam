@@ -56,10 +56,10 @@ $(document).ready(function(){
     for (let i = 0; i < number; i++) {
       if (subject_points[i] < 60){
         judge =  "不合格";
-        break
+        break;
       }
     }
-      return jugde;
+      return judge;
 };
 
   function judgement(){
@@ -88,7 +88,7 @@ $('#national_language, #english, #mathematics, #science, #society').change(funct
   });
 
   $('#btn-declaration').click(function() {
-    $('declaration').text(judgement());
+    $('#declaration').text(judgement());
   });
 });
 // ここに書かれているjsの記述はあくまでヒントとして用意された雛形なので、書かれている記述に従わずに実装したいという場合は、自分の好きに実装して構わない。課題要件を満たし、コードの品質が一定の水準にあると判定されればどのような実装でも合格になる。
